@@ -8,7 +8,7 @@ const en: Dictionary = {
     paragraphs: [
       "Bustan HaGalil Winery is the work of winemaker and grower Shay Lavi",
       "Our wines are made with a philosophy of minimal intervention, organic and biodynamic farming",
-      "The winery produces a limited quantity of wine, combining meticulous vineyard work and modern equipment in pursuit of wine that is precise, local and delicious",
+      "The winery produces a limited quantity of wine, combining meticulous vineyard work and modern equipment in pursuit of wine that is precise, delicious and local",
     ],
   },
   wines: {
