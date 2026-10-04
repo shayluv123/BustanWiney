@@ -54,8 +54,8 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
   const content = dict.wines.colors[color];
 
   return (
-    <div className={`min-h-screen ${backgrounds[color]}`}>
-      <nav dir="ltr" className="flex h-16 items-center px-4 md:px-10">
+    <div className={`flex min-h-svh flex-col ${backgrounds[color]}`}>
+      <nav dir="ltr" className="flex h-16 shrink-0 items-center px-4 md:px-10">
         <Link
           href={`${localePath(lang)}#wines`}
           className="flex items-center font-nav text-[17px] text-copper transition-opacity hover:opacity-70"
@@ -67,8 +67,10 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
 
       <h1 className="sr-only">{content.name}</h1>
 
-      {/* Rows alternate in the design: text–bottle, then bottle–text. On mobile they stack. */}
-      <div dir="ltr" className="mt-12 flex flex-col gap-16 px-4 md:mt-[120px]">
+      {/* Rows alternate in the design: text–bottle, then bottle–text. On mobile they stack.
+          On desktop the rows are centered in the space left by the nav and email, and the bottles
+          shrink with the window height so the whole page fits on one screen. */}
+      <div dir="ltr" className="flex flex-1 flex-col justify-center gap-16 px-4 py-8 md:gap-[min(64px,6svh)] md:py-4">
         {content.wines.map((wine, i) => {
           const bottleFirst = i % 2 === 1;
           return (
@@ -79,7 +81,7 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
               <Bottle
                 color={color}
                 alt={wine.name}
-                className={`h-[260px] md:h-[313px] ${bottleFirst ? "md:order-1" : "md:order-3"}`}
+                className={`h-[260px] md:h-[min(313px,32svh)] ${bottleFirst ? "md:order-1" : "md:order-3"}`}
               />
               <div className="hidden h-[118px] w-px bg-copper/30 md:order-2 md:block" />
               <div
@@ -96,7 +98,7 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
         })}
       </div>
 
-      <Contact dict={dict} className="pt-40 pb-24 md:pt-[411px] md:pb-[186px]" />
+      <Contact dict={dict} className="shrink-0 pt-8 pb-10" />
     </div>
   );
 }
