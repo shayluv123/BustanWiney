@@ -26,4 +26,4 @@ export function stripLocale(pathname: string) {
   return pathname;
 }
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bustanwinery.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bustanwinery.com";
