@@ -40,7 +40,7 @@ function Rich({ text }: { text: RichText }) {
     typeof part === "string" ? (
       part
     ) : (
-      <span key={i} dir="ltr" className="font-latin text-[20px] font-bold tracking-[1px]">
+      <span key={i} dir="ltr" className="font-latin text-[15px] font-bold tracking-[0.5px] md:text-[20px] md:tracking-[1px]">
         {part.latin}
       </span>
     ),
@@ -67,29 +67,29 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
 
       <h1 className="sr-only">{content.name}</h1>
 
-      {/* Rows alternate in the design: text–bottle, then bottle–text. On mobile they stack.
-          On desktop the rows are centered in the space left by the nav and email, and the bottles
-          shrink with the window height so the whole page fits on one screen. */}
-      <div dir="ltr" className="flex flex-1 flex-col justify-center gap-16 px-4 py-8 md:gap-[min(64px,6svh)] md:py-4">
+      {/* Rows alternate as in the design: text–bottle, then bottle–text, on every screen size.
+          The rows are centered between the nav and the email, and the bottles shrink with the
+          window height so the whole page fits on one screen (smaller sizes on phones). */}
+      <div dir="ltr" className="flex flex-1 flex-col justify-center gap-[min(40px,4svh)] px-4 py-2 md:gap-[min(64px,6svh)] md:py-4">
         {content.wines.map((wine, i) => {
           const bottleFirst = i % 2 === 1;
           return (
             <article
               key={wine.name}
-              className="flex flex-col items-center justify-center gap-6 md:flex-row md:gap-12"
+              className="flex items-center justify-center gap-4 md:gap-12"
             >
               <Bottle
                 color={color}
                 alt={wine.name}
-                className={`h-[260px] md:h-[min(313px,32svh)] ${bottleFirst ? "md:order-1" : "md:order-3"}`}
+                className={`h-[min(200px,27svh)] md:h-[min(313px,32svh)] ${bottleFirst ? "order-1" : "order-3"}`}
               />
-              <div className="hidden h-[118px] w-px bg-copper/30 md:order-2 md:block" />
+              <div className="order-2 h-[80px] w-px shrink-0 bg-copper/30 md:h-[118px]" />
               <div
                 dir={dir(lang)}
-                className={`w-full max-w-[300px] text-center ${bottleFirst ? "md:order-3 md:text-right" : "md:order-1 md:text-left"}`}
+                className={`min-w-0 flex-1 md:max-w-[300px] ${bottleFirst ? "order-3 text-right" : "order-1 text-left"}`}
               >
-                <h2 className="text-[23px]">{wine.name}</h2>
-                <p className="mt-[17px] text-[18px] leading-[22px]">
+                <h2 className="text-[18px] md:text-[23px]">{wine.name}</h2>
+                <p className="mt-2 text-[14px] leading-[18px] md:mt-[17px] md:text-[18px] md:leading-[22px]">
                   <Rich text={wine.description} />
                 </p>
               </div>
@@ -98,7 +98,7 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
         })}
       </div>
 
-      <Contact dict={dict} className="shrink-0 pt-8 pb-10" />
+      <Contact dict={dict} className="shrink-0 pt-4 pb-8 md:pt-8 md:pb-10" />
     </div>
   );
 }
