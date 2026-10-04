@@ -16,7 +16,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <Hero dict={dict} />
       <About dict={dict} />
       <WineColors lang={lang} dict={dict} />
-      <Contact dict={dict} className="flex min-h-svh items-center justify-center px-4" />
+      {/* lvh = screen height with the phone's browser bars hidden (as they are when scrolled to the bottom),
+          so the email fills the screen alone without the bottles peeking in. */}
+      <Contact dict={dict} className="flex min-h-lvh items-center justify-center px-4" />
     </>
   );
 }
