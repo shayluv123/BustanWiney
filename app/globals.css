@@ -10,6 +10,8 @@
   --font-hebrew: var(--font-mechonat), serif;
   --font-latin: var(--font-crimson), serif;
   --font-nav: var(--font-dm-serif), var(--font-mechonat), serif;
+  /* The Hebrew font has no Latin letters; Special Elite is the closest Latin typewriter match. */
+  --font-typewriter: var(--font-special-elite), monospace;
 
   --animate-fade-in: fade-in 1.92s ease-out both;
   @keyframes fade-in {

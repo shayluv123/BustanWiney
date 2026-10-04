@@ -7,7 +7,7 @@ export default function Contact({ dict, className }: { dict: Dictionary; classNa
       <a
         href={`mailto:${email}`}
         dir="ltr"
-        className="font-latin text-[20px] tracking-[1px] text-copper-muted transition-colors hover:text-copper"
+        className="font-typewriter text-[20px] text-copper-muted transition-colors hover:text-copper"
       >
         {email}
       </a>
