@@ -16,7 +16,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <Hero dict={dict} />
       <About dict={dict} />
       <WineColors lang={lang} dict={dict} />
-      <Contact dict={dict} className="pt-[156px] pb-[234px]" />
+      <Contact dict={dict} className="flex min-h-svh items-center justify-center px-4" />
     </>
   );
 }
