@@ -1,10 +1,7 @@
 import type { Dictionary } from "./types";
 
 const he: Dictionary = {
-  meta: {
-    title: "יקב בוסתן הגליל",
-    description: "יקב בוסתן הגליל — יינות אדום, לבן ורוזה מלב הגליל.",
-  },
+  meta: { title: "יקב בוסתן הגליל" },
   languageSwitch: { label: "English", target: "Switch to English" },
   about: {
     paragraphs: [

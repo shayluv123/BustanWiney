@@ -2,10 +2,7 @@ import type { Dictionary } from "./types";
 
 // TODO: English copy is a draft translation of the Hebrew design text — needs the owner's review.
 const en: Dictionary = {
-  meta: {
-    title: "Bustan HaGalil Winery",
-    description: "Bustan HaGalil Winery — red, white and rosé wines from the heart of the Galilee.",
-  },
+  meta: { title: "Bustan HaGalil Winery" },
   languageSwitch: { label: "עברית", target: "עבור לעברית" },
   about: {
     paragraphs: [

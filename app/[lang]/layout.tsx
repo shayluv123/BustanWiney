@@ -21,7 +21,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   return {
     metadataBase: new URL(siteUrl),
     title: { default: dict.meta.title, template: `%s | ${dict.meta.title}` },
-    description: dict.meta.description,
+    // No description on purpose: link previews (e.g. WhatsApp) should show only the winery name.
+    // The share image is app/[lang]/opengraph-image.jpg (logo on the sunset).
+    openGraph: { title: dict.meta.title, type: "website", locale: lang === "he" ? "he_IL" : "en_US" },
     alternates: {
       canonical: localePath(lang),
       languages: Object.fromEntries(locales.map((l) => [l, localePath(l)])),

@@ -19,7 +19,7 @@ export type WineColorContent = {
 };
 
 export type Dictionary = {
-  meta: { title: string; description: string };
+  meta: { title: string };
   languageSwitch: { label: string; target: string };
   about: { paragraphs: string[] };
   wines: { colors: Record<WineColor, WineColorContent> };

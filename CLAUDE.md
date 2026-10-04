@@ -35,4 +35,5 @@ npm run dev     # http://localhost:3000
 npm run build   # must pass; all pages prerendered for he + en
 npm run lint
 ```
-`NEXT_PUBLIC_SITE_URL` sets the canonical, sitemap and robots base URL (set it in Vercel).
+The live site is https://bustanwinery.com. That is the default base URL for canonical links, the sitemap and robots; `NEXT_PUBLIC_SITE_URL` overrides it.
+Link previews (WhatsApp etc.) intentionally show only the title, with no description, plus `app/[lang]/opengraph-image.jpg` (logo on the sunset, 1200×630).
