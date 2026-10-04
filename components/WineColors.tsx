@@ -7,7 +7,8 @@ import Bottle from "./Bottle";
 const order: WineColor[] = ["red", "rose", "white"];
 
 export default function WineColors({ lang, dict }: { lang: Locale; dict: Dictionary }) {
-  // On phones the padding is shifted so the gaps About→bottles and bottles→email are equal.
+  // On phones the padding is shifted so the gaps About→bottles and bottles→email are equal
+// (the bottom gets a little extra for the phone's hidden browser bars).
   return (
     <section id="wines" className="px-4 pt-[247px] pb-[72px] md:pt-[100px] md:pb-[188px]">
       <ul dir="ltr" className="flex items-center justify-center gap-10 sm:gap-20 md:gap-[150px]">
@@ -20,7 +21,7 @@ export default function WineColors({ lang, dict }: { lang: Locale; dict: Diction
               <Bottle
                 color={color}
                 alt={dict.wines.colors[color].name}
-                className="h-[clamp(200px,25.2vw,363px)]"
+                className="h-[clamp(220px,25.2vw,363px)]"
               />
             </Link>
           </li>
