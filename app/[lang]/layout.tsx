@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Crimson_Pro, DM_Serif_Text, Special_Elite } from "next/font/google";
+import { Crimson_Pro, Special_Elite } from "next/font/google";
 import localFont from "next/font/local";
 import { getDictionary } from "@/content";
 import { dir, hasLocale, localePath, locales, siteUrl } from "@/lib/i18n";
@@ -8,7 +8,6 @@ import "../globals.css";
 
 const mechonat = localFont({ src: "../fonts/FbMechonatDfus-Regular.woff", variable: "--font-mechonat" });
 const crimson = Crimson_Pro({ variable: "--font-crimson", subsets: ["latin"], weight: ["400", "700"] });
-const dmSerif = DM_Serif_Text({ variable: "--font-dm-serif", subsets: ["latin"], weight: "400" });
 const specialElite = Special_Elite({ variable: "--font-special-elite", subsets: ["latin"], weight: "400" });
 
 export function generateStaticParams() {
@@ -35,7 +34,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} dir={dir(lang)} className={`${mechonat.variable} ${crimson.variable} ${dmSerif.variable} ${specialElite.variable} antialiased`}>
+    <html lang={lang} dir={dir(lang)} className={`${mechonat.variable} ${crimson.variable} ${specialElite.variable} antialiased`}>
       <body>
         <main>{children}</main>
       </body>
