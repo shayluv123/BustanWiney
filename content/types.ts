@@ -4,21 +4,26 @@ export type WineColor = (typeof wineColors)[number];
 export const isWineColor = (value: string): value is WineColor =>
   (wineColors as readonly string[]).includes(value);
 
-export type WineColorContent = {
+/** Text with optional Latin-script terms (e.g. "Estate"), which the design sets in Crimson Pro bold. */
+export type RichText = (string | { latin: string })[];
+
+export type Wine = {
   name: string;
-  tagline: string;
-  description: string;
+  description: RichText;
+};
+
+export type WineColorContent = {
+  /** Used for the bottle's alt text and the page title. */
+  name: string;
+  wines: Wine[];
 };
 
 export type Dictionary = {
   meta: { title: string; description: string };
-  nav: { about: string; wines: string; contact: string; home: string };
   languageSwitch: { label: string; target: string };
-  hero: { title: string; tagline: string };
-  about: { heading: string; paragraphs: string[] };
-  wines: { heading: string; cta: string; colors: Record<WineColor, WineColorContent> };
+  about: { paragraphs: string[] };
+  wines: { colors: Record<WineColor, WineColorContent> };
   winePage: { back: string };
-  contact: { heading: string; text: string; email: string };
-  footer: { rights: string };
+  contact: { email: string };
   notFound: { heading: string; text: string; back: string };
 };

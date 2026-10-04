@@ -10,9 +10,9 @@ export default async function NotFound() {
 
   return (
     <section className="mx-auto max-w-2xl px-4 py-32 text-center">
-      <h1 className="text-4xl font-bold text-wine-900">{dict.heading}</h1>
+      <h1 className="text-4xl">{dict.heading}</h1>
       <p className="mt-4 text-lg">{dict.text}</p>
-      <Link href={localePath(lang)} className="mt-8 inline-block text-wine-700 hover:underline">
+      <Link href={localePath(lang)} className="mt-8 inline-block text-copper-muted hover:text-copper">
         {dict.back}
       </Link>
     </section>

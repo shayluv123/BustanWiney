@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Heebo } from "next/font/google";
+import { Crimson_Pro, DM_Serif_Text } from "next/font/google";
+import localFont from "next/font/local";
 import { getDictionary } from "@/content";
 import { dir, hasLocale, localePath, locales, siteUrl } from "@/lib/i18n";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import "../globals.css";
 
-const heebo = Heebo({
-  variable: "--font-heebo",
-  subsets: ["hebrew", "latin"],
-});
+const mechonat = localFont({ src: "../fonts/FbMechonatDfus-Regular.woff", variable: "--font-mechonat" });
+const crimson = Crimson_Pro({ variable: "--font-crimson", subsets: ["latin"], weight: ["400", "700"] });
+const dmSerif = DM_Serif_Text({ variable: "--font-dm-serif", subsets: ["latin"], weight: "400" });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -34,14 +32,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const dict = getDictionary(lang);
 
   return (
-    <html lang={lang} dir={dir(lang)} className={`${heebo.variable} antialiased`}>
-      <body className="flex min-h-screen flex-col font-sans">
-        <Header lang={lang} dict={dict} />
-        <main className="flex-1">{children}</main>
-        <Footer dict={dict} />
+    <html lang={lang} dir={dir(lang)} className={`${mechonat.variable} ${crimson.variable} ${dmSerif.variable} antialiased`}>
+      <body>
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -1,13 +1,20 @@
+import Image from "next/image";
 import type { Dictionary } from "@/content";
 
-// Placeholder hero — background image/video comes with the design artifacts.
+// hero.png is the design's full "Sunset hero" export (sky, sea, color overlay and fade), 1440×808 @3x.
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section className="flex min-h-[80vh] items-center justify-center bg-gradient-to-b from-wine-900 to-wine-700 px-4 text-center text-white">
-      <div>
-        <h1 className="text-4xl font-bold md:text-6xl">{dict.hero.title}</h1>
-        <p className="mt-4 text-lg text-wine-100 md:text-2xl">{dict.hero.tagline}</p>
-      </div>
+    <section className="relative h-[clamp(480px,56.1vw,808px)] overflow-hidden bg-night">
+      <Image src="/images/hero.png" alt="" fill priority sizes="100vw" className="object-cover" />
+      <Image
+        src="/images/logo.png"
+        alt={dict.meta.title}
+        width={791}
+        height={1024}
+        priority
+        sizes="122px"
+        className="absolute top-[calc(50%-32px)] left-1/2 h-auto w-[clamp(84px,8.47vw,122px)] -translate-1/2"
+      />
     </section>
   );
 }

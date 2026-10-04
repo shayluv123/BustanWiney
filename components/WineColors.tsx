@@ -1,39 +1,30 @@
 import Link from "next/link";
-import { wineColors, type Dictionary, type WineColor } from "@/content";
+import { type Dictionary, type WineColor } from "@/content";
 import { localePath, type Locale } from "@/lib/i18n";
+import Bottle from "./Bottle";
 
-// Placeholder swatches until real imagery is provided.
-const swatch: Record<WineColor, string> = {
-  red: "bg-wine-800",
-  white: "bg-white-wine",
-  rose: "bg-rose",
-};
+// Left-to-right order as in the design, regardless of page direction.
+const order: WineColor[] = ["red", "rose", "white"];
 
 export default function WineColors({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
-    <section id="wines" className="scroll-mt-20 bg-wine-100 px-4 py-20">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="text-center text-3xl font-bold text-wine-900 md:text-4xl">{dict.wines.heading}</h2>
-        <ul className="mt-12 grid gap-6 md:grid-cols-3">
-          {wineColors.map((color) => {
-            const wine = dict.wines.colors[color];
-            return (
-              <li key={color}>
-                <Link
-                  href={localePath(lang, `/wines/${color}`)}
-                  className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-lg"
-                >
-                  <div className={`aspect-[4/3] ${swatch[color]}`} />
-                  <div className="p-6 text-center">
-                    <h3 className="text-2xl font-semibold text-wine-900">{wine.name}</h3>
-                    <span className="mt-2 inline-block text-wine-700 group-hover:underline">{dict.wines.cta}</span>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+    <section id="wines" className="px-4 pt-[100px] pb-[188px]">
+      <ul dir="ltr" className="flex items-center justify-center gap-10 sm:gap-20 md:gap-[150px]">
+        {order.map((color) => (
+          <li key={color}>
+            <Link
+              href={localePath(lang, `/wines/${color}`)}
+              className="block transition-transform duration-300 hover:-translate-y-2"
+            >
+              <Bottle
+                color={color}
+                alt={dict.wines.colors[color].name}
+                className="h-[clamp(200px,25.2vw,363px)]"
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

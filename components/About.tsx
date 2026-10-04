@@ -2,14 +2,11 @@ import type { Dictionary } from "@/content";
 
 export default function About({ dict }: { dict: Dictionary }) {
   return (
-    <section id="about" className="scroll-mt-20 px-4 py-20">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="text-3xl font-bold text-wine-900 md:text-4xl">{dict.about.heading}</h2>
-        <div className="mt-6 space-y-4 text-lg leading-relaxed">
-          {dict.about.paragraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
-        </div>
+    <section id="about" className="px-4 py-[100px]">
+      <div className="mx-auto max-w-[736px] space-y-[1.2em] pt-12 text-center text-lg md:text-[21px]">
+        {dict.about.paragraphs.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
       </div>
     </section>
   );
