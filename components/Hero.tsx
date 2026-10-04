@@ -12,8 +12,8 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         width={791}
         height={1024}
         priority
-        sizes="122px"
-        className="absolute top-[calc(50%-32px)] left-1/2 h-auto w-[clamp(84px,8.47vw,122px)] -translate-1/2"
+        sizes="159px"
+        className="absolute top-[calc(50%-32px)] left-1/2 h-auto w-[clamp(109px,11vw,159px)] -translate-1/2 motion-safe:animate-fade-in"
       />
     </section>
   );
