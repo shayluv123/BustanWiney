@@ -23,10 +23,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--color-wine);
   color: var(--color-copper);
