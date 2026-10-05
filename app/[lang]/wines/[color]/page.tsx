@@ -57,7 +57,7 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
     <div className={`flex min-h-svh flex-col ${backgrounds[color]}`}>
       <nav dir="ltr" className="flex h-16 shrink-0 items-center px-4 md:px-10">
         <Link
-          href={localePath(lang)}
+          href={`${localePath(lang)}#wines`}
           className="flex items-center font-hebrew text-[18px] text-copper transition-opacity hover:opacity-70"
         >
           <Image src="/images/chevron-left.svg" alt="" width={20} height={20} />

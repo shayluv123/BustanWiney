@@ -12,7 +12,7 @@ Marketing site for the winery. Next.js 16 (App Router, TypeScript) + Tailwind CS
 - Unknown paths: `app/[lang]/[...rest]` calls `notFound()`, which renders `app/[lang]/not-found.tsx` (uses `next/root-params`).
 
 ## Page structure
-- Landing (`app/[lang]/page.tsx`): Hero, then About (`#about`), then WineColors (`#wines`, cards for red/white/rose), then Contact (`#contact`, email only).
+- Landing (`app/[lang]/page.tsx`): Hero, then About (`#about`), then WineColors (`#wines`, the three bottles; the wine pages' back link scrolls here), then Contact (`#contact`, email only).
 - No header or footer, by the owner's choice.
 - Wine color pages: `app/[lang]/wines/[color]/page.tsx`, for `red | white | rose`. Each has a back link, two wines in alternating bottle/text rows, the email, and a per-color gradient background.
 - Design source: Figma file `GB5pgT6ikuahcJhKWQnkAZ` (the owner's copy). Home frame `110:1784`; red `110:1805`, rose `110:1841`, white `110:1823`. The owner's Figma plan allows only about 20 MCP calls a month, so use them sparingly.
