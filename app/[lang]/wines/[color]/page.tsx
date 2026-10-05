@@ -86,7 +86,7 @@ export default async function WineColorPage({ params }: PageProps<"/[lang]/wines
               <div className="order-2 h-[80px] w-px shrink-0 bg-copper/30 md:h-[118px]" />
               <div
                 dir={dir(lang)}
-                className={`min-w-0 flex-1 md:max-w-[300px] ${bottleFirst ? "order-3 text-right" : "order-1 text-left"}`}
+                className={`min-w-0 flex-1 text-start md:max-w-[300px] ${bottleFirst ? "order-3" : "order-1"}`}
               >
                 <h2 className="text-[18px] md:text-[23px]">{wine.name}</h2>
                 <p className="mt-2 text-[14px] leading-[18px] md:mt-[17px] md:text-[18px] md:leading-[22px]">
