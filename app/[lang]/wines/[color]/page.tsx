@@ -9,7 +9,8 @@ import Contact from "@/components/Contact";
 
 // Page background per wine color, from the Figma design.
 const backgrounds: Record<WineColor, string> = {
-  red: "bg-[linear-gradient(210.26deg,rgb(129,20,22)_1.23%,rgb(84,7,35)_56.29%)]",
+  // Sealing-wax burgundy: lighter top-right, deep shadow bottom-left.
+  red: "bg-[linear-gradient(210.26deg,rgb(114,32,40)_0%,rgb(86,23,30)_45%,rgb(58,14,20)_100%)]",
   rose: "bg-[linear-gradient(35.21deg,rgb(160,55,74)_12.03%,rgb(87,28,38)_100%)]",
   white: "bg-[linear-gradient(210.26deg,rgb(173,44,9)_1.23%,rgb(94,36,46)_56.29%)]",
 };
