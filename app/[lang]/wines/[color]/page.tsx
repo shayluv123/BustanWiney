@@ -11,9 +11,9 @@ import Contact from "@/components/Contact";
 const backgrounds: Record<WineColor, string> = {
   // Sealing-wax burgundy: lighter top-right, deep shadow bottom-left.
   red: "bg-[linear-gradient(210.26deg,rgb(114,32,40)_0%,rgb(86,23,30)_45%,rgb(58,14,20)_100%)]",
-  // Around "Mystic" #D65282: the pure tone in the bottom-left corner, deepening toward the top-right
-  // so the copper text stays readable in the middle.
-  rose: "bg-[linear-gradient(35.21deg,rgb(214,82,130)_0%,rgb(176,62,104)_38%,rgb(122,38,70)_100%)]",
+  // Deep "Mystic" (#D65282) family: starts at a deep raspberry in the bottom-left corner and
+  // darkens toward the top-right.
+  rose: "bg-[linear-gradient(35.21deg,rgb(102,31,58)_0%,rgb(84,25,48)_45%,rgb(62,18,36)_100%)]",
   white: "bg-[linear-gradient(210.26deg,rgb(173,44,9)_1.23%,rgb(94,36,46)_56.29%)]",
 };
 
