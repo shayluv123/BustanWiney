@@ -14,11 +14,15 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Hero dict={dict} />
-      <About dict={dict} />
-      <WineColors lang={lang} dict={dict} />
-      {/* lvh = screen height with the phone's browser bars hidden (as they are when scrolled to the bottom),
-          so the email fills the screen alone without the bottles peeking in. */}
-      <Contact dict={dict} className="flex min-h-lvh items-center justify-center px-4" />
+      {/* Very gentle gradient below the hero: starts at the page color (so the hero's fade still blends)
+          and lightens slightly toward the bottom. */}
+      <div className="bg-linear-to-b from-wine to-[#52262f]">
+        <About dict={dict} />
+        <WineColors lang={lang} dict={dict} />
+        {/* lvh = screen height with the phone's browser bars hidden (as they are when scrolled to the bottom),
+            so the email fills the screen alone without the bottles peeking in. */}
+        <Contact dict={dict} className="flex min-h-lvh items-center justify-center px-4" />
+      </div>
     </>
   );
 }
