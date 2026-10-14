@@ -13,7 +13,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <Hero dict={dict} />
+      <Hero lang={lang} dict={dict} />
       {/* Very gentle gradient below the hero: starts at the page color (so the hero's fade still blends)
           and lightens slightly toward the bottom. */}
       <div className="bg-linear-to-b from-wine to-[#52262f]">

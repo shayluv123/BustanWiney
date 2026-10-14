@@ -6,6 +6,7 @@
   --color-wine: #3d1c22;
   --color-copper: #d6a38a;
   --color-copper-muted: rgb(214 163 138 / 0.5);
+  --color-gold: #ca9a39; /* mid-tone of the crest */
 
   --font-hebrew: var(--font-mechonat), serif;
   --font-latin: var(--font-crimson), serif;

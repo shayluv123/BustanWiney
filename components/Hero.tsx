@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { Dictionary } from "@/content";
+import type { Locale } from "@/lib/i18n";
+import LanguageToggle from "./LanguageToggle";
 import Parallax from "./Parallax";
 
 // hero-dusk.png is the design's "Sunset hero" export (1440×808 @3x), color-graded a little brighter
@@ -7,7 +9,7 @@ import Parallax from "./Parallax";
 // The hero fills the screen on every device, like the desktop design. dvh tracks the visible height
 // as iPhone Safari shows/hides its bars, so the sunset always fills the screen with the crest centered.
 // Parallax: the background scrolls slowest, the logo a little faster, the page at normal speed.
-export default function Hero({ dict }: { dict: Dictionary }) {
+export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <section className="relative h-svh min-h-[480px] overflow-hidden bg-night supports-[height:100dvh]:h-dvh">
       <Parallax speed={0.5} className="absolute inset-0">
@@ -26,6 +28,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           className="absolute top-1/2 left-1/2 h-auto md:top-[calc(50%-32px)] w-[clamp(88px,10.45vw,151px)] -translate-1/2 motion-safe:animate-fade-in"
         />
       </Parallax>
+      <LanguageToggle lang={lang} dict={dict} />
     </section>
   );
 }

@@ -13,7 +13,7 @@ Marketing site for the winery. Next.js 16 (App Router, TypeScript) + Tailwind CS
 
 ## Page structure
 - Landing (`app/[lang]/page.tsx`): Hero, then About (`#about`), then WineColors (`#wines`, the three bottles; the wine pages' back link scrolls here), then Contact (`#contact`, email only).
-- No header or footer, by the owner's choice.
+- No header or footer, by the owner's choice. The only language switch is the minimal "EN | HE" toggle in the hero's top-left corner (`components/LanguageToggle.tsx`).
 - Wine color pages: `app/[lang]/wines/[color]/page.tsx`, for `red | white | rose`. Each has a back link, two wines in alternating bottle/text rows, the email, and a per-color gradient background.
 - Design source: Figma file `GB5pgT6ikuahcJhKWQnkAZ` (the owner's copy). Home frame `110:1784`; red `110:1805`, rose `110:1841`, white `110:1823`. The owner's Figma plan allows only about 20 MCP calls a month, so use them sparingly.
 
@@ -25,7 +25,7 @@ Marketing site for the winery. Next.js 16 (App Router, TypeScript) + Tailwind CS
 
 ## Styling
 - Tailwind with logical properties (`ms-`, `pe-`, `text-start`) so layouts flip correctly between RTL and LTR.
-- Design tokens are in `app/globals.css` `@theme`: `night`, `wine` (page bg), `copper` (text), `copper-muted` (email); fonts are `font-hebrew` (body text, wine texts and the back link), `font-latin` (Crimson Pro, for Latin terms in wine texts) and `font-typewriter` (Special Elite, for the email, because the Hebrew font has no Latin letters).
+- Design tokens are in `app/globals.css` `@theme`: `night`, `wine` (page bg), `copper` (text), `copper-muted` (email), `gold` (crest gold, for the EN | HE toggle); fonts are `font-hebrew` (body text, wine texts and the back link), `font-latin` (Crimson Pro, for Latin terms in wine texts) and `font-typewriter` (Special Elite, for the email, because the Hebrew font has no Latin letters).
 - The Hebrew font "Fb MechonatDfus" is loaded with `next/font/local` from `app/fonts/` (a commercial font supplied by the owner).
 - Images are in `public/images` and come from the owner's `assets/` exports. `hero-dusk.png` is the full composed hero (brightened). Give a replacement image a new file name so the image cache does not serve the old one. Render bottles through `components/Bottle.tsx`.
 
