@@ -25,7 +25,7 @@ Marketing site for the winery. Next.js 16 (App Router, TypeScript) + Tailwind CS
 
 ## Styling
 - Tailwind with logical properties (`ms-`, `pe-`, `text-start`) so layouts flip correctly between RTL and LTR.
-- Design tokens are in `app/globals.css` `@theme`: `night`, `wine` (page bg), `copper` (text), `copper-muted` (email), `gold` (crest gold, for the EN | HE toggle); fonts are `font-hebrew` (body text, wine texts and the back link), `font-latin` (Crimson Pro, for Latin terms in wine texts) and `font-typewriter` (Special Elite, for the email, because the Hebrew font has no Latin letters).
+- Design tokens are in `app/globals.css` `@theme`: `night`, `wine` (page bg), `copper` (text), `copper-muted` (email), `gold` (crest gold, for the EN | HE toggle); fonts are `font-hebrew` (body text, wine texts and the back link), `font-latin` (Crimson Pro, for Latin terms in wine texts) and `font-typewriter` (Special Elite, for the email and the English About text, because the Hebrew font has no Latin letters).
 - The Hebrew font "Fb MechonatDfus" is loaded with `next/font/local` from `app/fonts/` (a commercial font supplied by the owner).
 - Images are in `public/images` and come from the owner's `assets/` exports. `hero-dusk.png` is the full composed hero (brightened). Give a replacement image a new file name so the image cache does not serve the old one. Render bottles through `components/Bottle.tsx`.
 
