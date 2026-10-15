@@ -7,7 +7,7 @@ import { dir, hasLocale, localePath, locales, siteUrl } from "@/lib/i18n";
 import "../globals.css";
 
 const mechonat = localFont({ src: "../fonts/FbMechonatDfus-Regular.woff", variable: "--font-mechonat" });
-const crimson = Crimson_Pro({ variable: "--font-crimson", subsets: ["latin"], weight: ["400", "700"] });
+const crimson = Crimson_Pro({ variable: "--font-crimson", subsets: ["latin"], weight: ["300", "400", "700"] });
 const specialElite = Special_Elite({ variable: "--font-special-elite", subsets: ["latin"], weight: "400" });
 
 export function generateStaticParams() {
