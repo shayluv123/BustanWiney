@@ -13,10 +13,10 @@ export default function LanguageToggle({ lang, dict }: { lang: Locale; dict: Dic
     <nav
       dir="ltr"
       aria-label="Language"
-      className="absolute top-5 left-5 z-10 flex items-center gap-0.5 font-latin text-[16px] font-light tracking-[2px] text-gold md:top-[35px] md:left-[45px] md:text-[17px]"
+      className="absolute top-5 left-5 z-10 flex items-center gap-0 font-latin text-[16px] font-light tracking-[2px] text-gold md:top-[35px] md:left-[45px] md:text-[17px]"
     >
       {order.map((l, i) => (
-        <span key={l} className="flex items-center gap-0.5">
+        <span key={l} className="flex items-center gap-0">
           {i > 0 && <span className="opacity-40">|</span>}
           {l === lang ? (
             <span aria-current="true">{labels[l]}</span>
